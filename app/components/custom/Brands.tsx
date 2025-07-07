@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -66,10 +67,12 @@ export default function Brands() {
               key={index}
               className="group flex-shrink-0 flex items-center justify-center h-16 sm:h-20 w-28 sm:w-36 hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0"
             >
-              <img
+              <Image
                 src={icon}
                 alt={`Company logo ${index + 1}`}
                 className="object-contain w-full h-full"
+                width={128}
+                height={128}
                 loading="lazy"
               />
             </div>

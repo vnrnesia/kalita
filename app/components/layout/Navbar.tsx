@@ -162,8 +162,6 @@ export const NavItems = ({
   );
 };
 
-
-
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
@@ -221,7 +219,6 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
-  onClose,
   visible,
 }: MobileNavMenuProps) => {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, LogIn, UserPlus, Menu, X } from "lucide-react";
+import { LogIn } from "lucide-react";
 
 import React, { useState } from "react";
 import {
