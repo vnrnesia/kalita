@@ -3,7 +3,7 @@ import { InteractiveHoverButton } from "@/app/components/magicui/interactive-hov
 
 const CtaCard = () => {
   return (
-    <div className="max-w-xs md:max-w-7xl mx-auto  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]  rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div className="max-w-xs md:max-w-7xl mx-auto h-[400px]  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]  rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-8">
       <div className="max-w-2xl">
         <h2 className="text-3xl md:text-4xl text-gray-100 font-bold mb-4">
           Начните бесплатно

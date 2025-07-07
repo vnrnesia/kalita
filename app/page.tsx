@@ -5,7 +5,8 @@ import BentoGridStateful from "./components/magicui/BentoGridStateful";
 import Testimonals from "./components/custom/Testimonals";
 import CtaCard from "./components/custom/CtaCard";
 import Footer from "./components/custom/Footer";
-import Ticker from "./components/custom/Ticker";
+
+import Earn from "./components/custom/Earn";
 import { Timeline } from "./components/magicui/timeline";
 import { timelineData } from "./components/magicui/timelinedata";
 
@@ -24,9 +25,14 @@ export default function Home() {
 
       <BentoGridStateful />
       <Timeline data={timelineData} />
-      <Testimonals />
-      <CtaCard />
-      <Ticker />
+      <div className="md:pt-24">
+        <Testimonals />
+      </div>
+      <div className="md:py-24">
+        <CtaCard />
+      </div>
+      <Earn/>
+      
       <div className="pt-24">
         <Footer />
       </div>
