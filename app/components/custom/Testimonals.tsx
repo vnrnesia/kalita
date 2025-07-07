@@ -2,7 +2,6 @@
 
 import { MarqueeDemo } from "./MarqueeDemo";
 import { ArrowRight } from "lucide-react";
-import { TextHoverEffect } from "../magicui/text-hover-effect";
 
 
 export default function Testimonials() {

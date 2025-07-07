@@ -1,5 +1,4 @@
 import React from "react";
-import { TextHoverEffect } from "../magicui/text-hover-effect";
 import { InteractiveHoverButton } from "@/app/components/magicui/interactive-hover-button";
 
 const MainSection: React.FC = () => {

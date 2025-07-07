@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { FiChevronUp } from "react-icons/fi";
-import Link from "next/link";
-import { TextHoverEffect } from "../magicui/text-hover-effect";
 
 const Footer = () => {
   const [visible, setVisible] = useState(false);
