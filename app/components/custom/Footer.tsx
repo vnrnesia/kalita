@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-neutral-900 text-gray-100 min-h-screen py-12">
-      <TextHoverEffect text="Калита" duration={0.3} />
+      <TextHoverEffect text="Калита" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
 
