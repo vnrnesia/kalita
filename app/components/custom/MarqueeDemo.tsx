@@ -1,47 +1,49 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { Marquee } from "../magicui/Marquee"
+import { Marquee } from "../magicui/Marquee";
 
 const reviews = [
   {
-    name: "Jack",
+    name: "Джек",
     username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    body: "Я никогда не видел ничего подобного. Это потрясающе. Я в восторге.",
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Jill",
+    name: "Джилл",
     username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    body: "Я даже не знаю, что сказать. Я потерял дар речи. Это потрясающе.",
     img: "https://avatar.vercel.sh/jill",
   },
   {
-    name: "John",
+    name: "Джон",
     username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "У меня нет слов. Это потрясающе. Я в восторге.",
     img: "https://avatar.vercel.sh/john",
   },
   {
-    name: "Jane",
+    name: "Джейн",
     username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "У меня нет слов. Это потрясающе. Я в восторге.",
     img: "https://avatar.vercel.sh/jane",
   },
   {
-    name: "Jenny",
+    name: "Дженни",
     username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "У меня нет слов. Это потрясающе. Я в восторге.",
     img: "https://avatar.vercel.sh/jenny",
   },
   {
-    name: "James",
+    name: "Джеймс",
     username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    body: "У меня нет слов. Это потрясающе. Я в восторге.",
     img: "https://avatar.vercel.sh/james",
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
+const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
 const ReviewCard = ({
   img,
@@ -58,10 +60,8 @@ const ReviewCard = ({
     <figure
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -91,8 +91,8 @@ export function MarqueeDemo() {
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background" />
     </div>
   );
 }

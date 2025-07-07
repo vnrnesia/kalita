@@ -4,21 +4,25 @@ import Brands from "./components/custom/Brands";
 import BentoGridStateful from "./components/magicui/BentoGridStateful";
 import Platform from "./components/custom/Platform";
 import Testimonals from "./components/custom/Testimonals";
-
-
+import CtaCard from "./components/custom/CtaCard";
+import Footer from "./components/custom/Footer";
 
 export default function Home() {
   return (
-   <>
-      <div className="bg-gradient-to-t from-neutral-50 from-0% via-red-700 via-50% to-slate-900 to-100%">
-        <SiteHeader />
+    <>
+      <div className="bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545] min-h-screen w-full">
+        <SiteHeader className="w-full bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]" />
+
         <MainSection />
-        <Brands />
       </div>
+
+      <Brands />
       <BentoGridStateful />
-      <Platform/>
-      <Testimonals/>
-     
+      <Testimonals />
+      <CtaCard />
+      <div className="pt-24">
+        <Footer />
+      </div>
     </>
   );
 }

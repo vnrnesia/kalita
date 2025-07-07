@@ -7,7 +7,7 @@ import { InteractiveHoverButton } from "@/app/components/magicui/interactive-hov
 const cards = [
   {
     name: "Безопасность",
-    background: <div className="h-24 bg-rose-800 w-full" />,
+    background: <div className="h-24  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545] w-full" />,
     Icon: ArrowRightIcon,
     description: "Ваши данные и средства защищены современными технологиями безопасности.",
     href: "#",
@@ -15,7 +15,7 @@ const cards = [
   },
   {
     name: "Доходность",
-    background: <div className="h-24 bg-rose-800  w-full" />,
+    background: <div className="h-24  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]  w-full" />,
     Icon: ArrowRightIcon,
     description: "",
     href: "#",
@@ -23,7 +23,7 @@ const cards = [
   },
   {
     name: "Прозрачность",
-    background: <div className="h-24 bg-rose-800  w-full" />,
+    background: <div className="h-24  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]  w-full" />,
     Icon: ArrowRightIcon,
     description: "",
     href: "#",
@@ -31,7 +31,7 @@ const cards = [
   },
   {
     name: "Надёжность",
-    background: <div className="h-24 bg-rose-800 w-full" />,
+    background: <div className="h-24  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545] w-full" />,
     Icon: ArrowRightIcon,
     description: "",
     href: "#",
@@ -43,7 +43,7 @@ export default function BentoGridStateful() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div className="py-16 max-w-6xl mx-auto flex flex-col gap-10">
+    <div className="pt-24 pb-16 max-w-6xl mx-auto flex flex-col gap-10">
 
       {/* Üst Satır */}
       <div className="flex gap-6">
@@ -112,7 +112,7 @@ export default function BentoGridStateful() {
           />
           <BentoCard
             name="Новый блок"
-            background={<div className="h-24 bg-rose-800  w-full" />}
+            background={<div className="h-24  bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]  w-full" />}
             Icon={ArrowRightIcon}
             description="Добавьте сюда ваш контент."
             href="#"

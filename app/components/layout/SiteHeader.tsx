@@ -1,6 +1,5 @@
 "use client";
 import { LogIn } from "lucide-react";
-
 import React, { useState } from "react";
 import {
   Navbar,
@@ -14,18 +13,22 @@ import {
   MobileNavToggle,
 } from "./Navbar";
 
-export const SiteHeader = () => {
+type SiteHeaderProps = {
+  className?: string;
+};
+
+export const SiteHeader = ({ className }: SiteHeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { name: "Главная", link: "#" },
     { name: "О нас", link: "#" },
     { name: "Партнеры", link: "#" },
-    { name: "Contact", link: "#" },
+    { name: "Контакты", link: "#" },
   ];
 
   return (
-    <Navbar>
+    <Navbar className={className}>
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
