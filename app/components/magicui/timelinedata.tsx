@@ -2,20 +2,19 @@ import React from "react";
 
 export const timelineData = [
   {
-    title: "Первый шаг — 1",
-    content: <p>Projeye başladım ve temel yapıyı oluşturdum.</p>,
+    title: "Первый шаг ",
+    content: <p className="text-xl text-gray-700 ">Вы переводите деньги со своей банковской карты на личный счёт в системе. Взамен вы получаете токены, номинированные в «цифровом золоте».</p>,
   },
   {
-    title: "Второй шаг — 2",
+    title: "Второй шаг",
     content: (
-      <ul>
-        <li>Yeni özellikler eklendi</li>
-        <li>Performans iyileştirildi</li>
-      </ul>
+      <p className="text-xl text-gray-700 ">
+        Вы можете продать токены участникам платформы или раз в месяц — самой платформе по курсу, привязанному к золоту.
+      </p>
     ),
   },
   {
-    title: "Третий шаг — 3",
-    content: <p>Projeyi yayınladım ve kullanıcılar geri bildirim verdi.</p>,
+    title: "Третий шаг ",
+    content: <p className="text-xl text-gray-700 ">Получите деньги сразу или доход до 10% от роста золота раз в месяц.</p>,
   },
 ];
