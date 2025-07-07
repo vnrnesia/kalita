@@ -3,11 +3,9 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 export const TextHoverEffect = ({
-  text,
-  duration,
+  text
 }: {
   text: string;
-  duration?: number;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const textRef = useRef(null);
