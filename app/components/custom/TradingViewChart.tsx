@@ -5,7 +5,7 @@ import { useEffect } from "react";
 // Eğer TradingView tipi tanımlı değilse aşağıya ekleyebilirsin
 declare global {
   interface Window {
-    TradingView: any;
+    TradingView: unknown;
   }
 }
 
