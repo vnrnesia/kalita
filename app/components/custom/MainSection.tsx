@@ -1,11 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Brands from "./Brands";
+
 
 
 
 const MainSection: React.FC = () => {
   return (
-    <section className="w-full h-[3000px] pt-12 md:pt-14 pb-12">
+    <section className="w-full  pt-12 md:pt-36 pb-12">
       <div className=" mx-auto px-8 flex  items-center justify-center gap-3">
         {/* Sol Metin */}
         <div className="text-center font-black max-w-4xl">
@@ -23,7 +25,7 @@ const MainSection: React.FC = () => {
             </span>
           </h1>
 
-          <p className="md:text-lg text-black mt-6">
+          <p className="md:text-lg font-extralight text-gray-300 mt-6">
             Покупай токены, торгуй с другими участниками или <br /> получай
             прибыль по цене золота
           </p>
@@ -41,6 +43,7 @@ const MainSection: React.FC = () => {
         {/* Sağ Görsel */}
        
       </div>
+      
     </section>
   );
 };
