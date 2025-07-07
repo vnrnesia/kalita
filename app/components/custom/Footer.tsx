@@ -1,153 +1,122 @@
 "use client";
+import React, { useState, FormEvent } from "react";
+import { TextHoverEffect } from "../magicui/text-hover-effect";
 
-import { useState, useEffect } from "react";
-import { FiChevronUp } from "react-icons/fi";
+const Footer: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
 
-const Footer = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      const pageHeight = document.documentElement.scrollHeight;
-      const scrollThreshold = pageHeight * 0.9;
-
-      setVisible(scrollPosition >= scrollThreshold);
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log("Подписка оформлена для:", email);
+    setEmail("");
   };
 
   return (
-    <>
-      {/* Основной футер */}
-      <footer className=" bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545] w-full min-h-[550px] bg-gray-100 text-gray-800 font-manrope">
-        <div className="w-full">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 md:pb-12">
-            <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-12">
-              {/* Левая часть */}
-              <div className="max-w-xl py-8 md:py-16">
-                <div className="flex items-center gap-2 mb-4">
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl text-gray-200 font-medium leading-tight mb-3">
-                  Готовы взять под контроль <br className="hidden sm:block" /> свои финансы?
-                </h2>
-                <p className="text-gray-300 font-sans font-light mb-5">
-                  Мы с нетерпением ждём, чтобы узнать о ваших финансовых целях.
-                </p>
-                <div className="pt-8 md:pt-16">
-                  <button className="bg-[#ffffff] hover:bg-blue-100 t font-medium px-6 py-2 rounded-full transition-colors duration-300">
-                    Бесплатная консультация
-                  </button>
-                </div>
-              </div>
+    <footer className="bg-neutral-900 text-gray-100 min-h-screen py-12">
+      <TextHoverEffect text="Калита" duration={0.3} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
 
-              {/* Правая часть */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16 text-sm pt-8 md:pt-36 text-gray-600">
-                <div className="space-y-4">
-                  <h4 className="text-base font-semibold text-gray-200 tracking-wide mb-4">
-                    КОНТАКТЫ
-                  </h4>
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-200" >Телефон</p>
-                    <p className="text-base md:text-lg text-gray-200">+7 (917) 889 94–54</p>
-                  </div>
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-200">Email</p>
-                    <p className="text-base md:text-lg text-gray-200">info@bankbooker.com</p>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
+          {/* Brand Statement */}
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Калита</h3>
+            <p className="text-gray-400 text-sm">
+              Калита — это платформа для покупки и продажи золота. Мы делаем
+              торговлю быстрой, простой, безопасной и выгодной для всех участников.
+            </p>
+          </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-200">Пн – Пт:</p>
-                    <p className="text-base md:text-lg text-gray-200">8:30 – 17:30</p>
-                  </div>
-                  <div>
-                    <p className="text-base md:text-lg font-medium text-gray-200">Москва:</p>
-                    <p className="text-base md:text-lg text-gray-200">
-                      Кремлёвская ул. 1140, РФ 13131
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Услуги</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="/buy-gold" className="hover:text-white">
+                  Покупка золота
+                </a>
+              </li>
+              <li>
+                <a href="/sell-gold" className="hover:text-white">
+                  Продажа золота
+                </a>
+              </li>
+              <li>
+                <a href="/secure-trade" className="hover:text-white">
+                  Безопасные сделки
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Навигация</h4>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
+                <a href="/about" className="hover:text-white">
+                  О платформе
+                </a>
+              </li>
+              <li>
+                <a href="/how-it-works" className="hover:text-white">
+                  Как это работает
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="hover:text-white">
+                  Частые вопросы
+                </a>
+              </li>
+              <li>
+                <a href="/contacts" className="hover:text-white">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter & Contact */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Подписка на новости</h4>
+            <form onSubmit={handleSubmit} className="mb-4">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Введите ваш email"
+                className="w-full p-2 rounded-md bg-neutral-800 text-gray-100 border border-neutral-700 focus:outline-none focus:border-white"
+                required
+              />
+              <button
+                type="submit"
+                className="mt-2 w-full bg-[#862828] text-white py-2 rounded-md hover:bg-[#a13333] transition"
+              >
+                Подписаться
+              </button>
+            </form>
+            <p className="text-gray-400 text-sm">Москва, Россия</p>
+            <p className="text-gray-400 text-sm">support@kalita.ru</p>
+            <p className="text-gray-400 text-sm">+7 495 123 45 67</p>
           </div>
         </div>
-      </footer>
 
-      {/* Меню */}
-      <div className="w-full border-t border-gray-300 bg-white mb-10 md:mb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-[142px] text-gray-600 text-sm font-semibold text-center">
-            <a href="#" className="hover:text-rose-900 transition-colors">Услуги</a>
-            <a href="#" className="hover:text-rose-900 transition-colors">О нас</a>
-            <a href="#" className="hover:text-rose-900 transition-colors">Новости</a>
-            <a href="#" className="hover:text-rose-900 transition-colors">Карьера</a>
-            <a href="#" className="hover:text-rose-900 transition-colors">Команда</a>
-            <a href="#" className="hover:text-rose-900 transition-colors">Контакты</a>
+        {/* Bottom Bar */}
+        <div className="mt-8 pt-8 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex space-x-4">
+            <a href="/terms" className="text-gray-400 text-sm hover:text-white">
+              Условия использования
+            </a>
+            <a href="/cookies" className="text-gray-400 text-sm hover:text-white">
+              Политика cookies
+            </a>
           </div>
-        </div>
-
-        <div className="hidden md:block w-full max-w-[1270px] mx-auto border-t border-gray-300" />
-
-        {/* Нижняя часть */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <div className="text-gray-600 flex flex-wrap items-center justify-center gap-4">
-              <span>2025 Bankbooker. Все права защищены.</span>
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-blue-600 transition-colors">Условия использования</a>
-                <a href="#" className="hover:text-blue-600 transition-colors">Политика конфиденциальности</a>
-              </div>
-            </div>
-
-            {/* Соцсети */}
-            <div className="flex gap-6 pb-10 md:pb-0">
-              <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src="/images/LeftPanel/icon1.png" alt="X" className="w-5 h-5 md:w-6 md:h-6" />
-              </a>
-              <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src="/images/LeftPanel/icon2.png" alt="LinkedIn" className="w-5 h-5 md:w-6 md:h-6" />
-              </a>
-              <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src="/images/LeftPanel/icon3.png" alt="Facebook" className="w-5 h-5 md:w-6 md:h-6" />
-              </a>
-              <a href="#" className="hover:opacity-75 transition-opacity">
-                <img src="/images/LeftPanel/icon4.png" alt="Instagram" className="w-5 h-5 md:w-6 md:h-6" />
-              </a>
-            </div>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            {/* Social icons (can remain unchanged) */}
           </div>
         </div>
       </div>
-
-      {/* Кнопка наверх */}
-      <button
-        onClick={scrollToTop}
-        aria-label="Наверх"
-        className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50
-          bg-[#430000] hover:bg-rose-950
-          text-white p-3 rounded-full
-          shadow-lg
-          flex items-center justify-center
-          w-10 h-10
-          pointer-events-auto
-          transition-all duration-300 ease-in-out
-          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"}
-        `}
-        style={{ willChange: "opacity, transform" }}
-      >
-        <FiChevronUp size={24} />
-      </button>
-      <div className="flex justify-center items-center  ">
-     
-    </div>
-    </>
+    </footer>
   );
 };
 

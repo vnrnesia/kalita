@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useInView } from "framer-motion";
 
 export const TextHoverEffect = ({
   text,
@@ -10,6 +10,9 @@ export const TextHoverEffect = ({
   duration?: number;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
+  const textRef = useRef(null);
+  const isInView = useInView(textRef, { once: true });
+
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
@@ -57,17 +60,16 @@ export const TextHoverEffect = ({
           )}
         </linearGradient>
 
-        <motion.radialGradient
+        <radialGradient
           id="revealMask"
           gradientUnits="userSpaceOnUse"
           r="20%"
-          initial={{ cx: "50%", cy: "50%" }}
-          animate={maskPosition}
-          transition={{ duration: duration ?? 0, ease: "easeOut" }}
+          cx={maskPosition.cx}
+          cy={maskPosition.cy}
         >
           <stop offset="0%" stopColor="white" />
           <stop offset="100%" stopColor="black" />
-        </motion.radialGradient>
+        </radialGradient>
 
         <mask id="textMask">
           <rect
@@ -93,6 +95,7 @@ export const TextHoverEffect = ({
       </text>
 
       <motion.text
+        ref={textRef}
         x="50%"
         y="50%"
         textAnchor="middle"
@@ -100,10 +103,11 @@ export const TextHoverEffect = ({
         strokeWidth="0.3"
         className="fill-transparent stroke-neutral-200 font-[helvetica] text-[70px] font-bold dark:stroke-neutral-800"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
-        animate={{
-          strokeDashoffset: 0,
-          strokeDasharray: 1000,
-        }}
+        animate={
+          isInView
+            ? { strokeDashoffset: 0, strokeDasharray: 1000 }
+            : {}
+        }
         transition={{
           duration: 4,
           ease: "easeInOut",
