@@ -10,13 +10,16 @@ import Footer from "./components/custom/Footer";
 export default function Home() {
   return (
     <>
-      <div className="bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545] min-h-screen w-full">
-        <SiteHeader className="w-full bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545]" />
+      <div className="h-screen bg-gradient-to-r from-neutral-900 via-[#862828] to-[#f73545] w-full flex flex-col">
+        <SiteHeader />
 
         <MainSection />
+
+        <div className="mt-auto bg-white w-full">
+          <Brands />
+        </div>
       </div>
 
-      <Brands />
       <BentoGridStateful />
       <Testimonals />
       <CtaCard />
