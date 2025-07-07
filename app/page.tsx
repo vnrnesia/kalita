@@ -5,6 +5,9 @@ import BentoGridStateful from "./components/magicui/BentoGridStateful";
 import Testimonals from "./components/custom/Testimonals";
 import CtaCard from "./components/custom/CtaCard";
 import Footer from "./components/custom/Footer";
+import Ticker from "./components/custom/Ticker";
+import { Timeline } from "./components/magicui/timeline";
+import { timelineData } from "./components/magicui/timelinedata";
 
 export default function Home() {
   return (
@@ -20,8 +23,10 @@ export default function Home() {
       </div>
 
       <BentoGridStateful />
+      <Timeline data={timelineData} />
       <Testimonals />
       <CtaCard />
+      <Ticker />
       <div className="pt-24">
         <Footer />
       </div>
