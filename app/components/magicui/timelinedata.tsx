@@ -1,0 +1,17 @@
+import React from "react";
+import { TextReveal } from "./text-reveal";
+
+export const timelineData = [
+  {
+    title: "Первый шаг ",
+    content: "Пополняете баланс и покупаете токены",
+  },
+  {
+    title: "Второй шаг",
+    content: "Продавайте другим или ждите выкупа",
+  },
+  {
+    title: "Третий шаг ",
+    content: "Продавайте токены — участнику или платформе",
+  },
+];
