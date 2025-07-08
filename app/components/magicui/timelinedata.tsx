@@ -1,5 +1,4 @@
-import React from "react";
-import { TextReveal } from "./text-reveal";
+
 
 export const timelineData = [
   {

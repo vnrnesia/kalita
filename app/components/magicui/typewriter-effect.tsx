@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function TypewriterTicker() {
-  const words = ["стабильно", "быстро", "легко"];
+  const words = useMemo(() => ["Привет", "Мир", "React"], []); // kendi kelimelerinizi yazın
+
+  useEffect(() => {
+    // useEffect içeriği
+  }, [words]);
+
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
