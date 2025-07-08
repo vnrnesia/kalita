@@ -3,10 +3,9 @@ import { InteractiveHoverButton } from "@/app/components/magicui/interactive-hov
 
 const MainSection: React.FC = () => {
   return (
-    <section className="w-full flex items-center justify-center px-8 py-12">
+    <section className="w-full pt-24 mx-auto my-auto flex items-center justify-center px-8 py-12">
       <div className="text-center font-extrabold max-w-4xl">
-
-        <h1 className="text-3xl md:text-[3.4vw] text-gray-200 leading-tight">
+        <h1 className="text-3xl md:text-[3.4vw] text-gray-200 leading-tight text-center">
           Инвестируй в{" "}
           <span className="inline-block px-4 py-1 border border-white rounded-full">
             цифровое
