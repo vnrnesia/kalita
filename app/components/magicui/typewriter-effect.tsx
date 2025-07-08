@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function TypewriterTicker() {
-  const words = useMemo(() => ["Привет", "Мир", "React"], []); // kendi kelimelerinizi yazın
+  const words = useMemo(() => ["стабильно", "быстро", "легко"], []); // kendi kelimelerinizi yazın
 
   useEffect(() => {
     // useEffect içeriği
